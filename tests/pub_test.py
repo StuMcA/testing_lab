@@ -22,6 +22,9 @@ class TestPub(unittest.TestCase):
         self.assertEqual("rusty nail", drink.name)
     
     def test_return_drink_price(self):
-       drink = self.pub.find_drink_by_name("rusty nail")
-       self.assertEqual(7,drink.price)
-       
+        drink = self.pub.find_drink_by_name("rusty nail")
+        self.assertEqual(7,drink.price)
+
+    def test_pub_increase_till(self):
+        self.pub.increase_till(7)
+        self.assertEqual(1007, self.pub.till)
