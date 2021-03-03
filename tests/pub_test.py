@@ -33,9 +33,8 @@ class TestPub(unittest.TestCase):
         verified = self.pub.check_customer_age(self.customer_1)
         self.assertEqual(None, verified)
 
-    def test_check_customer_drunkenness(self):
-        verified = self.pub.check_drunkenness_level(self.customer_1)
-        self.assertEqual(None, verified)
+    def test_check_customer_drunkenness__starts_zero(self):
+        self.assertEqual(0, self.customer_1.drunkenness)
 
     def test_refuse_customer_drunk(self):
         self.customer_1.buy_drink("rusty nail", self.pub, self.customer_1)
