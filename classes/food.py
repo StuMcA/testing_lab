@@ -4,3 +4,6 @@ class Food:
         self.name = name
         self.price = price
         self.rejuvenation_lvl = rejuvenation_lvl
+
+    def decrease_drunkenness_lvl(self, customer, food ):
+        customer.drunkenness -= food.rejuvenation_lvl

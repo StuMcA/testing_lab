@@ -5,9 +5,11 @@ from classes.customer import *
 
 class TestPub(unittest.TestCase):
     def setUp (self):
+        self.food = Food("bangers and mash", 12.95, 1.5)
         self.drink = Drink("rusty nail", 7, 0.8)
-        self.pub = Pub("last mans drop", 1000, [self.drink] )
+        self.pub = Pub("last mans drop", 1000, [self.drink], [self.food] )
         self.customer_1 = Customer("Bobby Ramshaw", 247.22, 45)
+
 
     def test_pub_name(self): 
         self.assertEqual("last mans drop", self.pub.name)
@@ -44,4 +46,8 @@ class TestPub(unittest.TestCase):
         self.customer_1.buy_drink("rusty nail", self.pub, self.customer_1)
         self.assertEqual(3.2, self.customer_1.drunkenness)
         
-
+    def test_buy_food(self):
+        self.pub.buy_food("bangers and mash", self.pub, self.customer_1)
+        self.assertEqual(234.27, self.customer_1.wallet)
+        self.assertEqual(1012.95, self.pub.till )
+        self.assertEqual(-1.5 , self.customer_1.drunkenness)
