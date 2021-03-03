@@ -15,3 +15,12 @@ class Pub:
             if drink.name == drink_found:
                 return drink
         return None
+
+    def check_customer_age(self, customer):
+        if customer.age < 18:
+            return True
+
+    def check_drunkenness_level(self, customer):
+        if customer.drunkenness > 3:
+            return True
+        
