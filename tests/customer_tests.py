@@ -1,6 +1,7 @@
 import unittest
 from classes.customer import *
 
+
 class TestCustomer(unittest.TestCase):
     def setUp (self):
         self.customer = Customer("Bobby Ramshaw", 247.22)

@@ -2,6 +2,7 @@ import unittest
 from classes.drink import *
 
 class TestDrink(unittest.TestCase):
+
     def setUp (self):
         self.drink = Drink("rusty nail", 7)
     
